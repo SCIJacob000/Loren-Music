@@ -1,5 +1,5 @@
 class MusiciansController < ApplicationController
-  before_action :set_musician, only: %i[ show edit update destroy ]
+  before_action :set_musician, only: %i[ show edit update ]
 
   # GET /musicians or /musicians.json
   def index
@@ -19,20 +19,20 @@ class MusiciansController < ApplicationController
   def edit
   end
 
-  # POST /musicians or /musicians.json
-  def create
-    @musician = Musician.new(musician_params)
-
-    respond_to do |format|
-      if @musician.save
-        format.html { redirect_to @musician, notice: "Musician was successfully created." }
-        format.json { render :show, status: :created, location: @musician }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @musician.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # POST /musicians or /musicians.json COMMENTED OUT FOR NOW AS IT IS NOT USED
+ # def create
+  #  @musician = Musician.new(musician_params)
+#
+   # respond_to do |format|
+ #     if @musician.save
+  #      format.html { redirect_to @musician, notice: "Musician was successfully created." }
+   #     format.json { render :show, status: :created, location: @musician }
+    #  else
+     #   format.html { render :new, status: :unprocessable_entity }
+      #  format.json { render json: @musician.errors, status: :unprocessable_entity }
+     # end
+  #  end
+#  end
 
   # PATCH/PUT /musicians/1 or /musicians/1.json
   def update
@@ -47,15 +47,15 @@ class MusiciansController < ApplicationController
     end
   end
 
-  # DELETE /musicians/1 or /musicians/1.json
-  def destroy
-    @musician.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to musicians_path, status: :see_other, notice: "Musician was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  # DELETE /musicians/1 or /musicians/1.json COMMENTED OUT FOR NOW AS IT IS NOT USED
+#  def destroy
+ #   @musician.destroy!
+#
+  #  respond_to do |format|
+ #     format.html { redirect_to musicians_path, status: :see_other, notice: "Musician was successfully destroyed." }
+  #    format.json { head :no_content }
+   # end
+ # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

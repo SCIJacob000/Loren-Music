@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# db/seeds.rb
+Musician.create!(
+  first_name: 'Loren',
+  last_name: 'Zukow',
+  username: 'LZ Music',
+  password: 'Encrypt Later', # you can encrypt it if needed with has_secure_password
+  instruments: 'Guitar, Piano, Cello',
+  local_area: 'Denver, CO',
+)
+
