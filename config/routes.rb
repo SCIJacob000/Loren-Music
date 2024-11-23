@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :musicians
   resources :inquiries
   resources :musicians, only: [:show, :edit, :update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

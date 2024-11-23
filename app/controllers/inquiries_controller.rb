@@ -3,6 +3,7 @@ class InquiriesController < ApplicationController
 
   # GET /inquiries or /inquiries.json
   def index
+    @Musician = Musician.find_by(first_name: "Loren", last_name: "Zuko")
     @inquiries = Inquiry.all
   end
 

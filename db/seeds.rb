@@ -15,5 +15,6 @@ Musician.create!(
   password: 'Encrypt Later', # you can encrypt it if needed with has_secure_password
   instruments: 'Guitar, Piano, Cello',
   local_area: 'Denver, CO',
+  email: 'scijacob000@gmail.com'
 )
 
