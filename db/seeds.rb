@@ -10,7 +10,7 @@
 # db/seeds.rb
 Musician.create!(
   first_name: 'Loren',
-  last_name: 'Zukow',
+  last_name: 'Zuko',
   username: 'LZ Music',
   password: 'Encrypt Later', # you can encrypt it if needed with has_secure_password
   instruments: 'Guitar, Piano, Cello',

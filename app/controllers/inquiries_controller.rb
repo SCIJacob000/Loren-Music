@@ -21,6 +21,10 @@ class InquiriesController < ApplicationController
 
   # POST /inquiries or /inquiries.json
   def create
+    # load in Loren Zuko as the default musician for now
+    @Musician = Musician.find_by(first_name: "Loren", last_name: "Zuko")
+    #set inquiry_params so that the musician_id is set to Loren Zuko's id for every inquiry
+    inquiry_params[:musician_id] = @Musician.id
     @inquiry = Inquiry.new(inquiry_params)
 
     respond_to do |format|
