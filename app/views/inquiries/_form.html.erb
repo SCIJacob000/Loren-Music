@@ -57,8 +57,8 @@
   </div>
 
   <div style="display: none;">
-    <% form.label :musician_id, style: "display: block" %>
-    <% form.text_field :musician_id, value: Musician.find_by(first_name: 'Loren').id %>
+    <%= form.label :musician_id, style: "display: block" %>
+    <%= form.text_field :musician_id, value: @Musician.id %>
   </div>
   
 

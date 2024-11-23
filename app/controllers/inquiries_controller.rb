@@ -8,23 +8,22 @@ class InquiriesController < ApplicationController
 
   # GET /inquiries/1 or /inquiries/1.json
   def show
+    @Musician = Musician.find_by(first_name: "Loren", last_name: "Zuko")
   end
 
   # GET /inquiries/new
   def new
+    @Musician = Musician.find_by(first_name: "Loren", last_name: "Zuko")
     @inquiry = Inquiry.new
   end
 
   # GET /inquiries/1/edit
   def edit
+    @Musician = Musician.find_by(first_name: "Loren", last_name: "Zuko")
   end
 
   # POST /inquiries or /inquiries.json
   def create
-    # load in Loren Zuko as the default musician for now
-    @Musician = Musician.find_by(first_name: "Loren", last_name: "Zuko")
-    #set inquiry_params so that the musician_id is set to Loren Zuko's id for every inquiry
-    inquiry_params[:musician_id] = @Musician.id
     @inquiry = Inquiry.new(inquiry_params)
 
     respond_to do |format|
