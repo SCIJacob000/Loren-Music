@@ -1,5 +1,5 @@
 class MusiciansController < ApplicationController
-  before_action :set_musician, only: %i[ show edit update ]
+  before_action :set_musician, only: %i[ edit update destroy ]
 
   # GET /musicians or /musicians.json
   def index
@@ -7,8 +7,8 @@ class MusiciansController < ApplicationController
   end
 
   # GET /musicians/1 or /musicians/1.json
-  def show
-  end
+  #def show
+  #end
 
   # GET /musicians/new
   def new
@@ -56,6 +56,7 @@ class MusiciansController < ApplicationController
   #    format.json { head :no_content }
    # end
  # end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
