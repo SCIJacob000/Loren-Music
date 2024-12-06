@@ -55,7 +55,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "faker"
-  gem 'minitest', require: false 
+  gem 'minitest', '~> 5.14.0'
 
 end
 

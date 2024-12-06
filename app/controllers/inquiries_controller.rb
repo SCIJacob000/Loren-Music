@@ -26,9 +26,11 @@ class InquiriesController < ApplicationController
   # POST /inquiries or /inquiries.json
   def create
     @inquiry = Inquiry.new(inquiry_params)
+    
 
     respond_to do |format|
       if @inquiry.save
+        UserMailer.with(inquiry: @inquiry).inquiry_email.deliver_later
         format.html { redirect_to @inquiry, notice: "Inquiry was successfully created." }
         format.json { render :show, status: :created, location: @inquiry }
       else

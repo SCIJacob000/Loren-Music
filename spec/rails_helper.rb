@@ -41,6 +41,8 @@ RSpec.configure do |config|
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
   ]
+  require_relative 'support/factory_bot'
+  require_relative 'support/chrome'
   
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
@@ -72,7 +74,4 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  
-require_relative 'support/factory_bot'
-require_relative 'support/chrome'
 end

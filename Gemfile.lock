@@ -163,7 +163,7 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
-    minitest (5.25.4)
+    minitest (5.14.4)
     msgpack (1.7.5)
     mutex_m (0.3.0)
     net-imap (0.5.1)
@@ -349,6 +349,7 @@ DEPENDENCIES
   faker
   importmap-rails
   jbuilder
+  minitest (~> 5.14.0)
   puma (>= 5.0)
   rails (~> 7.1.5)
   rails-controller-testing
