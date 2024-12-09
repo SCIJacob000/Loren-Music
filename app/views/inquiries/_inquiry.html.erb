@@ -1,52 +1,25 @@
-<div id="<%= dom_id inquiry %>">
-  <p>
-    <strong>Host first name:</strong>
-    <%= inquiry.host_first_name %>
-  </p>
+<div id="<%= dom_id inquiry %>" class="inquiry-details">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label class="fw-bold text-secondary">Host Name</label>
+        <div class="fs-5"><%= inquiry.host_first_name %> <%= inquiry.host_last_name %></div>
+      </div>
 
-  <p>
-    <strong>Host last name:</strong>
-    <%= inquiry.host_last_name %>
-  </p>
+      <div class="mb-3">
+        <label class="fw-bold text-secondary">Contact Information</label>
+        <div><i class="bi bi-envelope"></i> <%= inquiry.host_email %></div>
+        <div><i class="bi bi-telephone"></i> <%= inquiry.host_phone_number %></div>
+      </div>
+    </div>
 
-  <p>
-    <strong>Host email:</strong>
-    <%= inquiry.host_email %>
-  </p>
-
-  <p>
-    <strong>Host phone number:</strong>
-    <%= inquiry.host_phone_number %>
-  </p>
-
-  <p>
-    <strong>Event name:</strong>
-    <%= inquiry.event_name %>
-  </p>
-
-  <p>
-    <strong>Event location:</strong>
-    <%= inquiry.event_location %>
-  </p>
-
-  <p>
-    <strong>Event date:</strong>
-    <%= inquiry.event_date %>
-  </p>
-
-  <p>
-    <strong>Start time:</strong>
-    <%= inquiry.start_time %>
-  </p>
-
-  <p>
-    <strong>Duration:</strong>
-    <%= inquiry.duration %>
-  </p>
-
-  <p>
-    <strong>Musician:</strong>
-    <%= inquiry.musician_id %>
-  </p>
-
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label class="fw-bold text-secondary">Event Details</label>
+        <div class="fs-5"><%= inquiry.event_name %></div>
+        <div><i class="bi bi-geo-alt"></i> <%= inquiry.event_location %></div>
+        <div><i class="bi bi-calendar"></i> <%= inquiry.event_date.strftime('%B %d, %Y') %></div>
+      </div>
+    </div>
+  </div>
 </div>

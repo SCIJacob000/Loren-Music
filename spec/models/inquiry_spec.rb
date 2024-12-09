@@ -1,11 +1,15 @@
+# spec/models/inquiry_spec.rb
+
 require 'rails_helper'
 
 RSpec.describe Inquiry, type: :model do
+  # Testing a model's validations
   describe 'validations' do
     it 'is valid with all attributes' do
       inquiry = build(:inquiry)
       expect(inquiry).to be_valid
     end
+  end
 
     it 'is invalid without a host email' do
       inquiry = build(:inquiry, host_email: nil)
@@ -16,8 +20,8 @@ RSpec.describe Inquiry, type: :model do
       inquiry = build(:inquiry, event_date: nil)
       expect(inquiry).not_to be_valid
     end
-  end
-
+    
+  # Testing model associations
   describe 'associations' do
     it 'has a musician_id' do
       inquiry = create(:inquiry)
@@ -25,6 +29,7 @@ RSpec.describe Inquiry, type: :model do
     end
   end
 
+  # Testing model attributes for presence and range
   describe 'attributes' do
     it 'has the expected attributes' do
       inquiry = create(:inquiry)
@@ -37,4 +42,5 @@ RSpec.describe Inquiry, type: :model do
       expect(inquiry.duration).to be_between(1, 5)
     end
   end
+
 end

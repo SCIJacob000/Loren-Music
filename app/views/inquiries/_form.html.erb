@@ -1,72 +1,85 @@
-<%= form_with(model: inquiry) do |form| %>
-  <% if inquiry.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(inquiry.errors.count, "error") %> prohibited this inquiry from being saved:</h2>
+<div class="needs-validation p-4 bg-dark text-light rounded-3 shadow">
+  <%= form_with(model: inquiry) do |form| %>
+    <% if inquiry.errors.any? %>
+      <div class="alert alert-danger mb-4">
+        <h2 class="h5"><%= pluralize(inquiry.errors.count, "error") %> prohibited this inquiry from being saved:</h2>
+        <ul class="list-unstyled mb-0">
+          <% inquiry.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% inquiry.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <%= form.label :host_first_name, "First Name", class: "form-label" %>
+          <%= form.text_field :host_first_name, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <%= form.label :host_last_name, "Last Name", class: "form-label" %>
+          <%= form.text_field :host_last_name, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <%= form.label :host_email, "Email", class: "form-label" %>
+          <%= form.email_field :host_email, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <%= form.label :host_phone_number, "Phone Number", class: "form-label" %>
+          <%= form.telephone_field :host_phone_number, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-group mb-3">
+          <%= form.label :event_name, "Event Name", class: "form-label" %>
+          <%= form.text_field :event_name, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-group mb-3">
+          <%= form.label :event_location, "Event Location", class: "form-label" %>
+          <%= form.text_field :event_location, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group mb-3">
+          <%= form.label :event_date, "Event Date", class: "form-label" %>
+          <%= form.date_field :event_date, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group mb-3">
+          <%= form.label :start_time, "Start Time", class: "form-label" %>
+          <%= form.time_field :start_time, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group mb-3">
+          <%= form.label :duration, "Duration", class: "form-label" %>
+          <%= form.number_field :duration, class: "form-control bg-dark text-light border-secondary" %>
+        </div>
+      </div>
+
+      <%= form.hidden_field :musician_id, value: @Musician.id %>
+
+      <div class="col-12">
+        <%= form.submit "Submit Inquiry", class: "btn btn-primary w-100" %>
+      </div>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :host_first_name, style: "display: block" %>
-    <%= form.text_field :host_first_name %>
-  </div>
-
-  <div>
-    <%= form.label :host_last_name, style: "display: block" %>
-    <%= form.text_field :host_last_name %>
-  </div>
-
-  <div>
-    <%= form.label :host_email, style: "display: block" %>
-    <%= form.text_field :host_email %>
-  </div>
-
-  <div>
-    <%= form.label :host_phone_number, style: "display: block" %>
-    <%= form.text_field :host_phone_number %>
-  </div>
-
-  <div>
-    <%= form.label :event_name, style: "display: block" %>
-    <%= form.text_field :event_name %>
-  </div>
-
-  <div>
-    <%= form.label :event_location, style: "display: block" %>
-    <%= form.text_field :event_location %>
-  </div>
-
-  <div>
-    <%= form.label :event_date, style: "display: block" %>
-    <%= form.date_field :event_date %>
-  </div>
-
-  <div>
-    <%= form.label :start_time, style: "display: block" %>
-    <%= form.time_field :start_time %>
-  </div>
-
-  <div>
-    <%= form.label :duration, style: "display: block" %>
-    <%= form.number_field :duration %>
-  </div>
-
-  <div style="display: none;">
-    <%= form.label :musician_id, style: "display: block" %>
-    <%= form.text_field :musician_id, value: @Musician.id %>
-  </div>
-  
-
-  <div>
-    <%= form.submit %>
-  </div>
-
-
-
-
-<% end %>
+</div>

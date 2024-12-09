@@ -10,10 +10,11 @@
   <body>
     <%= yield %>
     <h1>Welcome to LZ Music</h1>
-    <p>
-      You have successfully submitted an inquiry!<br>
-    </p>
-    <p>Thanks for your interest and have a great day!</p>
 
+    <h2>New Inquiry Received</h2>
+
+      <p>We have received a new inquiry for the event <%= @inquiry.event_name %> on <%= @inquiry.event_date %>.</p>
+      <p>Event Location: <%= @inquiry.event_location %></p>
+      <p>Thanks for your interest and have a great day!</p>
   </body>
 </html>

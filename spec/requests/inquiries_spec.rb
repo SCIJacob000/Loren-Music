@@ -60,7 +60,7 @@ RSpec.describe "Inquiries", type: :request do
   end
 
   describe "DELETE /inquiries/:id" do
-    it "destroys the requested inquiry" do
+    it "destroys the requested Inquiry" do
       inquiry = create(:inquiry)
       expect {
         delete inquiry_path(inquiry)

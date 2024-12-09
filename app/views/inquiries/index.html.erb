@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<p class="alert alert-success"><%= notice %></p>
 
-<h1>Inquiries</h1>
-
-<div id="inquiries">
-  <% @inquiries.each do |inquiry| %>
-    <%= render inquiry %>
-    <p>
-      <%= link_to "Show this inquiry", inquiry %>
-    </p>
-  <% end %>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">Inquiries</h1>
+      
+      <div class="row" id="inquiries">
+        <% @inquiries.each do |inquiry| %>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <%= render inquiry %>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <%= link_to "Show this inquiry", inquiry, 
+                    class: "btn btn-primary btn-sm" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= link_to "New inquiry", new_inquiry_path %>
+
